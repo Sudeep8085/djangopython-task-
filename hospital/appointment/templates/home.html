@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+HOSPITAL
+{% endblock %}
+
+{% block body %}
+<center><h1 style="color:#0d5634" > WELCOME CITY HOSPITAL </h1></center>
+{% for a in messages %}
+    <center><h5 style="color:rgb(17, 70, 37)">{{a}}</h5></center>
+{% endfor %}
+
+<form  method="POST">
+   {% csrf_token %}
+  <div class="container">
+      <b style="color:#e30f67" > Patient Appoinment </b><br>
+      <label><b>First Name:</b></label><br>
+      <input type="text" name="f_name" placeholder="First name "required><br>
+
+       <label> <b>Last Name:</b></label><br>
+       <input type="text" name="l_name" placeholder="Last name"required><br>
+
+
+      <label> <b>Mobile</b></label><br>
+       <input type="text" name="mobile" placeholder="Mobile number" required><br>
+
+      <label> <b>Email</b></label><br>
+       <input type="text" name="email" placeholder="example@gmail.com"required><br>
+
+      <lebel><b> Visit Date</b></lebel><br>
+      <input type="date" name="visitDate" required><br>
+
+      <label><b> Address</b></label><br>
+      <input type="text" name="address" placeholder=" Your address"required><br><br>
+
+     <label >Gender</label>
+    <select name="gender">
+	    <option value="none" selected>Gender</option>
+	    <option value="1">Male</option>
+	    <option value="2">Female</option>
+	    <option value="3">other</option>
+     </select><br><br>
+
+
+      <div> <input  class="btn btn-primary "type="submit" value="submit"></div>
+
+  </div>
+</form>
+
+{% endblock %}
